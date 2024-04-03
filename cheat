@@ -1,0 +1,16 @@
+radio = document.querySelector('ol')
+radio_all = radio.querySelectorAll('input')
+
+newArray = []
+for (let i = 0; i < radio_all.length; i++) {
+    newArray.push(radio_all[i].value)
+}
+
+newArray.sort()
+newArray.shift()
+
+for (let i = 0; i < radio_all.length-1; i++) {
+    if(radio_all[i].value == newArray[0]){
+        radio_all[i].checked = true
+    }
+}
